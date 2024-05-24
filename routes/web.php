@@ -11,16 +11,17 @@
 |
 */
 
-Route::get('/', 'InitialController@mostrarHomepage')
-->name('homepage');
+Route::get('/', 'InitialController@mostrarHomepage')->name('homepage');
 
-Route::get('/completarRegistro', 'InitialController@mostrarCompletarRegistro')
-->name('completarRegistro');
+Route::get('/completarRegistro', 'InitialController@mostrarCompletarRegistro')->name('completarRegistro');
 
-Route::post('/completarRegistro/success', 'InitialController@crearRegistro')
-->name('crearRegistro');
+Route::post('/completarRegistro/success', 'InitialController@crearRegistro')->name('crearRegistro');
 
-Route::get('/registrosExistentes', 'InitialController@mostrarRegistrosExistentes')
-->name('registrosExistentes');
+Route::get('/registrosExistentes', 'InitialController@mostrarRegistrosExistentes')->name('registrosExistentes');
+
+Route::delete('/registroEliminado/{id}', 'InitialController@eliminarRegistro')->name('registrosExistentes.delete');
+
+Route::match(['patch', 'put'], '/registroModificado/{id}', 'InitialController@modificarRegistro')->name('registrosExistentes.modify');
+
 
 

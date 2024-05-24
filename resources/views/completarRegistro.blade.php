@@ -5,7 +5,7 @@
 @section('content')
 <div class="row text-center">
     <div class="col-12">
-        <h1 class="h1">
+        <h1 class="h1 m-3">
             Hagamos tu registro más personalizado.
         </h1>    
     </div>
@@ -25,12 +25,11 @@
                 Seleccione un turno a cargar:
             </label>
             <select name="turno" class="form-control w-25">
-                <option value="default" selected>...</option>
-                <option value="mañana">Mañana</option>
-                <option value="tarde">Tarde</option>
-                <option value="noche">Noche</option>
+                <option value="Mañana">Mañana</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Noche">Noche</option>
             </select>
-            <button type="submit" class="btn btn-dark" id="submitButton">Crear registro</button>
+            <button type="submit" class="btn btn-dark" action="" id="submitButton">Crear registro</button>
         </form>
     </div>
 </div>
