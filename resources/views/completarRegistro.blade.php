@@ -3,7 +3,7 @@
 @section('title', 'Registro 2')
 
 @section('content')
-<div class="row text-center">
+<div class="row text-center m-0 p-0">
     <div class="col-12">
         <h1 class="h1 m-3">
             Hagamos tu registro más personalizado.
@@ -29,6 +29,14 @@
                 <option value="Tarde">Tarde</option>
                 <option value="Noche">Noche</option>
             </select>
+            <label for="especie">Ingrese la especie que desee cargar:</label>
+            <input type="text" class="form-control w-25" name="especie" placeholder="Ej.: Timbó" required>
+            <label for="cantidad_tablas">Ingrese la cantidad de tablas:</label>
+            <input type="number" class="form-control w-25" name="cantidad_tablas" placeholder="Ej.: 20" required>
+            <label for="medidas">Ingrese las medidas de las tablas:</label>
+            <input type="number" name="alto" class="form-control w-25" placeholder="Alto en pies" required>
+            <input type="number" name="ancho" class="form-control w-25" placeholder="Ancho en pies" required>
+            <input type="number" name="espesor" class="form-control w-25" placeholder="Espesor en pulgadas" required>
             <button type="submit" class="btn btn-dark" action="" id="submitButton">Crear registro</button>
         </form>
     </div>
@@ -39,6 +47,10 @@
         margin: auto;
         width: 50%;
         margin-bottom: 10px;
+    }
+
+    form {
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     }
 </style>
 
