@@ -13,6 +13,8 @@
 
 Route::get('/', 'InitialController@mostrarHomepage')->name('homepage');
 
+Route::get('/login', 'InitialController@mostrarLogin')->name('login');
+
 Route::get('/completarRegistro', 'InitialController@mostrarCompletarRegistro')->name('completarRegistro');
 
 Route::post('/completarRegistro/success', 'InitialController@crearRegistro')->name('crearRegistro');

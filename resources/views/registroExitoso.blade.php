@@ -5,7 +5,7 @@
 @section('content')
     <div class="d-flex justify-content-center">
         <div class="title">
-            <h1 class="mt-3">
+            <h1 class="mt-3 josefin">
                 Su registro fue cargado <span class="fw-bolder">exitosamente</span>
             </h1>
         </div>

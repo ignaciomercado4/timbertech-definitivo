@@ -5,7 +5,7 @@
 @section('content')
 <div class="row-12 text-center">
     <div class="col-12">
-        <h1 class="h1">
+        <h1 class="h1 josefin">
             Registros creados:
         </h1>
     </div>

@@ -11,7 +11,7 @@
         </h1>
     </div>
     <div class="col-12">
-        <h4 class="h2">
+        <h4 class="h2 josefin">
             Virtualizador de inventarios para aserraderos.
         </h4>
     </div>

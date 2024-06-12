@@ -12,6 +12,10 @@ class InitialController extends Controller
         return view('registrosExistentes', compact('registros'));
     }
 
+    public function mostrarLogin() {
+        return view('login');
+    }
+
     public function mostrarHomepage() {
         return view('homepage');
     }

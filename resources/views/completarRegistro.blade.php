@@ -5,9 +5,10 @@
 @section('content')
 <div class="row text-center m-0 p-0">
     <div class="col-12">
-        <h1 class="h1 m-3">
+        <h1 class="h1 m-3 josefin">
             Hagamos tu registro más personalizado.
-        </h1>    
+        </h1>   
+        <hr>
     </div>
     <div class="col-12">
         <form method="POST" action="{{ route('crearRegistro') }}" class="form-group">
@@ -39,6 +40,7 @@
             <input type="number" name="espesor" class="form-control w-25" placeholder="Espesor en pulgadas" required>
             <button type="submit" class="btn btn-dark" action="" id="submitButton">Crear registro</button>
         </form>
+        <hr>
     </div>
 </div>
 
@@ -49,9 +51,6 @@
         margin-bottom: 10px;
     }
 
-    form {
-        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    }
 </style>
 
 <script>
