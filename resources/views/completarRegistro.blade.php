@@ -37,7 +37,12 @@
             <label for="medidas">Ingrese las medidas de las tablas:</label>
             <input type="number" name="alto" class="form-control w-25" placeholder="Alto en pies" required>
             <input type="number" name="ancho" class="form-control w-25" placeholder="Ancho en pies" required>
-            <input type="number" name="espesor" class="form-control w-25" placeholder="Espesor en pulgadas" required>
+            <input type="number" name="espesor" class="form-control w-25" placeholder="Espesor en pulgadas" required><br>
+            <hr>
+            <button type="button" class="btn btn-outline-dark" action="" id="calculateButton">Calcular totales</button><br>
+            <input type="number" name="totalMetrosCubicos" id="inputTotalMetrosCubicos" class="form-control w-25 mt-2" placeholder="Total metros cúbicos" required><br>
+            <input type="number" name="totalPiesTablares" id="inputTotalPiesTablares" class="form-control w-25" placeholder="Total pies tablares" required><br>
+            <hr>
             <button type="submit" class="btn btn-dark" action="" id="submitButton">Crear registro</button>
         </form>
         <hr>
@@ -50,10 +55,11 @@
         width: 50%;
         margin-bottom: 10px;
     }
-
 </style>
 
-<script>
+<script type="text/javascript">
     
 </script>
+
+
 @endsection

@@ -4,9 +4,9 @@
 
 @section('content')
 
-<div class="row text-center">
+<div class="row text-center josefin">
     <div class="col-12">
-        <h1 class="h1 mt-4 fw-bolder" style="font-size: 4.5rem">
+        <h1 class="h1 mt-4 fw-bolder josefin" style="font-size: 4.5rem">
             Timber<span class="fw-light">Tech</span>
         </h1>
     </div>
