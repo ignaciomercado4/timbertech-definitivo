@@ -5,7 +5,7 @@ Este repositorio contiene todos los archivos de la aplicación que estoy desarro
 ## Para devs
 - PHP 7.2.5
 - Composer 2.7.4
-- Node.js (cuanto más reciente mejor)
+- Node.js 10.5
 
 Para correr el proyecto en local hay que seguir los siguientes pasos:
 - Clonar el repositorio en una carpeta vacía
