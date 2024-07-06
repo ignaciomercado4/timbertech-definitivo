@@ -1,6 +1,6 @@
 @extends('layouts.basicLayout')
 
-@section('title', 'Registro 2')
+@section('title', 'Completar Registro')
 
 @section('content')
 <div class="row text-center m-0 p-0">
@@ -32,24 +32,34 @@
                 <option value="Noche">Noche</option>
             </select>
 
-            <label for="especie">Ingrese la especie que desee cargar:</label>
+            <label for="especie">
+                Ingrese la especie que desee cargar:
+            </label>
             <input type="text" class="form-control w-25" name="especie" placeholder="Ej.: Timbó" required>
 
-            <label for="cantidad_tablas">Ingrese la cantidad de tablas:</label>
+            <label for="cantidad_tablas">
+                Ingrese la cantidad de tablas:
+            </label>
             <input type="number" class="form-control w-25" name="cantidad_tablas" id="cantidadTablas" placeholder="Ej.: 20" required>
 
-            <label for="medidas">Ingrese las medidas de las tablas:</label>
+            <label for="medidas">
+                Ingrese las medidas de las tablas:
+            </label>
             <input type="number" name="alto" id="alto" class="form-control w-25" placeholder="Alto en pies" required>
             <input type="number" name="ancho" id="ancho" class="form-control w-25" placeholder="Ancho en pies" required>
             <input type="number" name="espesor" id="espesor" class="form-control w-25" placeholder="Espesor en pulgadas" required><br>
             <hr>
 
-            <button type="button" class="btn btn-outline-dark" action="" id="calculateButton" onclick="calcularVolumenMetrosCubicos(); calcularVolumenPiesTablares()">Calcular totales</button><br>
+            <button type="button" class="btn btn-outline-dark" action="" id="calculateButton" onclick="calcularVolumenMetrosCubicos(); calcularVolumenPiesTablares()">
+                Calcular totales
+            </button><br>
             <input type="text" name="totalMetrosCubicos" id="inputTotalMetrosCubicos" class="form-control w-25 mt-2" placeholder="Total metros cúbicos" required disabled><br>
             <input type="text" name="totalPiesTablares" id="inputTotalPiesTablares" class="form-control w-25" placeholder="Total pies tablares" required><br>
             <hr>
 
-            <button type="submit" class="btn btn-dark" action="" id="submitButton">Crear registro</button>
+            <button type="submit" class="btn btn-dark" action="" id="submitButton">
+                Crear registro
+            </button>
         </form>
         <hr>
     </div>
@@ -91,6 +101,7 @@
 
         totalMetrosCubicosInput.value = volumenTotalMetrosCubicos + " m³";
     }
+
 
     function calcularVolumenPiesTablares() {
         
