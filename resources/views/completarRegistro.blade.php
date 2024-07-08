@@ -40,21 +40,27 @@
             <label for="cantidad_tablas">
                 Ingrese la cantidad de tablas:
             </label>
-            <input type="number" class="form-control w-25" name="cantidad_tablas" id="cantidadTablas" placeholder="Ej.: 20" required>
+            <input type="number" class="form-control w-25" name="cantidad_tablas" id="cantidadTablas" placeholder="Ej.: 20" min="0" required>
 
             <label for="medidas">
                 Ingrese las medidas de las tablas:
             </label>
-            <input type="number" name="alto" id="alto" class="form-control w-25" placeholder="Alto en pies" required>
-            <input type="number" name="ancho" id="ancho" class="form-control w-25" placeholder="Ancho en pies" required>
-            <input type="number" name="espesor" id="espesor" class="form-control w-25" placeholder="Espesor en pulgadas" required><br>
+            <input type="number" name="alto" id="alto" class="form-control w-25" placeholder="Alto en pies" min="0" required>
+            <input type="number" name="ancho" id="ancho" class="form-control w-25" placeholder="Ancho en pies" min="0" required>
+            <input type="number" name="espesor" id="espesor" class="form-control w-25" placeholder="Espesor en pulgadas" min="0" required><br>
             <hr>
 
             <button type="button" class="btn btn-outline-dark" action="" id="calculateButton" onclick="calcularVolumenMetrosCubicos(); calcularVolumenPiesTablares()">
                 Calcular totales
             </button><br>
-            <input type="text" name="total_metros_cubicos" id="inputTotalMetrosCubicos" class="form-control w-25 mt-2" placeholder="Total metros cúbicos" required disabled><br>
-            <input type="text" name="total_pies_tablares" id="inputTotalPiesTablares" class="form-control w-25" placeholder="Total pies tablares" required disabled><br>
+            <label for="total_metros_cubicos" class="mt-2">
+                Total en metros cúbicos:
+            </label>
+            <input type="number" name="total_metros_cubicos" id="inputTotalMetrosCubicos" class="form-control w-25 mt-2" placeholder="Total metros cúbicos" required disabled><br>
+            <label for="total_pies_tablares">
+                Total en pies tablares:
+            </label>
+            <input type="number" name="total_pies_tablares" id="inputTotalPiesTablares" class="form-control w-25" placeholder="Total pies tablares" required disabled><br>
             <hr>
 
             <button type="submit" class="btn btn-dark" action="" id="submitButton">
@@ -70,7 +76,23 @@
         margin: auto;
         width: 50%;
         margin-bottom: 10px;
+
     }
+
+    label {
+        font-weight: 600;
+    }
+
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
 </style>
 
 <script type="text/javascript">
@@ -99,7 +121,7 @@
         let volumenTotalMetrosCubicos = volumenTablaMetrosCubicos * cantidadTablas;
         volumenTotalMetrosCubicos = volumenTotalMetrosCubicos.toFixed(4);
 
-        totalMetrosCubicosInput.value = volumenTotalMetrosCubicos + " m³";
+        totalMetrosCubicosInput.value = volumenTotalMetrosCubicos;
     }
 
 
@@ -124,8 +146,10 @@
         let volumenTotalPiesTablares = volumenTablaMetrosCubicos * cantidadTablas;
         volumenTotalPiesTablares = volumenTotalPiesTablares.toFixed(4);
 
-        totalPiesTablaresInput.value = volumenTotalPiesTablares + " bf";
+        totalPiesTablaresInput.value = volumenTotalPiesTablares;
     }
+
+
 </script>
 
 

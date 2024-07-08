@@ -1,5 +1,5 @@
 <table class="table-bordered">
-    <tr>
+    <tr class="text-center">
         <th>Nombre</th>
         <th>Fecha</th>
         <th>Turno</th>
@@ -8,13 +8,13 @@
         <th>Alto</th>
         <th>Ancho</th>
         <th>Espesor</th>
-        <th>Total m3</th>
-        <th>Total bf</th>
+        <th>Total metros cúbicos</th>
+        <th>Total pies tablares</th>
         <th>ID</th>
         <th>Acciones</th>
     </tr>
     @foreach($registros as $registro)
-        <tr>
+        <tr class="text-center">
             <td>{{ $registro->operario }}</td>
             <td>{{ $registro->fecha }}</td>
             <td>{{ $registro->turno }}</td>
@@ -37,5 +37,14 @@
                 <button class="btn btn-primary m-2 p-1">Modificar registro</button>
             </td>
         </tr>
+        <style>
+            th {
+                padding: 5px;
+            }
+
+            td {
+                padding: 5px;
+            }
+        </style>
     @endforeach
 </table>
