@@ -53,8 +53,8 @@
             <button type="button" class="btn btn-outline-dark" action="" id="calculateButton" onclick="calcularVolumenMetrosCubicos(); calcularVolumenPiesTablares()">
                 Calcular totales
             </button><br>
-            <input type="text" name="totalMetrosCubicos" id="inputTotalMetrosCubicos" class="form-control w-25 mt-2" placeholder="Total metros cúbicos" required disabled><br>
-            <input type="text" name="totalPiesTablares" id="inputTotalPiesTablares" class="form-control w-25" placeholder="Total pies tablares" required><br>
+            <input type="text" name="total_metros_cubicos" id="inputTotalMetrosCubicos" class="form-control w-25 mt-2" placeholder="Total metros cúbicos" required disabled><br>
+            <input type="text" name="total_pies_tablares" id="inputTotalPiesTablares" class="form-control w-25" placeholder="Total pies tablares" required disabled><br>
             <hr>
 
             <button type="submit" class="btn btn-dark" action="" id="submitButton">
