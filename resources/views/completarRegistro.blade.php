@@ -56,11 +56,11 @@
             <label for="total_metros_cubicos" class="mt-2">
                 Total en metros cúbicos:
             </label>
-            <input type="number" name="total_metros_cubicos" id="inputTotalMetrosCubicos" class="form-control w-25 mt-2" placeholder="Total metros cúbicos" required disabled><br>
+            <input type="number" step="0.0001" name="total_metros_cubicos" id="inputTotalMetrosCubicos" class="form-control w-25 mt-2" placeholder="Total metros cúbicos" required><br>
             <label for="total_pies_tablares">
                 Total en pies tablares:
             </label>
-            <input type="number" name="total_pies_tablares" id="inputTotalPiesTablares" class="form-control w-25" placeholder="Total pies tablares" required disabled><br>
+            <input type="number" step="0.0001" name="total_pies_tablares" id="inputTotalPiesTablares" class="form-control w-25" placeholder="Total pies tablares" required><br>
             <hr>
 
             <button type="submit" class="btn btn-dark" action="" id="submitButton">
