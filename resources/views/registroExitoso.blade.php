@@ -12,12 +12,12 @@
     </div>
     <div class="row-12 text-center">
         <div class="col-12">    
-            <button class="btn btn-dark m-3 fs-3">
+            <button class="btn btn-dark m-3 fs-3" onclick="window.location.href = '{{ url("registrosExistentes") }}'">
                 Ver registros
             </button>
         </div>
         <div class="col-12">            
-            <button class="btn btn-dark m-3 fs-3" onclick="window.location.href = '{{ url("completarRegistro") }}'"">
+            <button class="btn btn-dark m-3 fs-3" onclick="window.location.href = '{{ url("completarRegistro") }}'">
                 Volver cargar un nuevo registro
             </button>
         </div>
