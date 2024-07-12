@@ -27,14 +27,18 @@
             <td>{{ $registro->total_pies_tablares }}</td>
             <td>{{ $registro->id }}</td>
             <td>
-                <form method="POST" action="{{ route('registrosExistentes.delete', ['id' => $registro->id]) }}">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" onclick="
-                    alert('Seguro que deseas eliminar el registro de la fecha ' + {{ $registro->fecha }} + ', turno ' + '{{ $registro->turno }}')
-                    " class="btn btn-danger m-2 p-1">Eliminar registro</button>
-                </form>
-                <button class="btn btn-primary m-2 p-1">Modificar registro</button>
+            <button 
+                class="btn btn-danger" 
+                onclick="mostrarModalEliminarRegistro(this);"
+                data-registro-id="{{ $registro->id }}"
+                data-operario="{{ $registro->operario }}"
+                data-fecha="{{ $registro->fecha }}"
+                data-especie="{{ $registro->especie }}"
+                >
+                Eliminar
+            </button>
+                <button class="btn btn-primary">Modificar</button>
+                <button class="btn btn-black">PDF</button>
             </td>
         </tr>
         <style>
@@ -48,3 +52,20 @@
         </style>
     @endforeach
 </table>
+
+@include('components.modalEliminarRegistro')
+
+@push('scripts')
+    <script type="text/javascript">
+        function mostrarModalEliminarRegistro(btn) {
+            jQuery('#modalEliminarRegistro').modal('show');
+            jQuery('#datosRegistroEliminarId').val(btn.dataset.registroId);
+            jQuery('#datosRegistroEliminarFecha').val(btn.dataset.fecha);
+            jQuery('#datosRegistroEliminarOperario').val(btn.dataset.operario);
+            jQuery('#datosRegistroEliminarEspecie').val(btn.dataset.especie);
+
+            let actionCorrecto = window.location.protocol + "//" + window.location.host + "/registroEliminado/" + btn.dataset.registroId;
+            jQuery('#frmEliminarRegistro').attr('action', actionCorrecto);
+        }
+    </script>
+@endpush
