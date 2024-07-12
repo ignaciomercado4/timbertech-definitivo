@@ -33,11 +33,23 @@
                 data-registro-id="{{ $registro->id }}"
                 data-operario="{{ $registro->operario }}"
                 data-fecha="{{ $registro->fecha }}"
-                data-especie="{{ $registro->especie }}"
-                >
+                data-especie="{{ $registro->especie }}">
                 Eliminar
             </button>
-                <button class="btn btn-primary">Editar</button>
+                <button class="btn btn-primary"
+                onclick="mostrarModalEditarRegistro(this);"
+                data-registro-id="{{ $registro->id }}"
+                data-operario="{{ $registro->operario }}"
+                data-fecha="{{ $registro->fecha }}"
+                data-turno="{{ $registro->turno }}"
+                data-especie="{{ $registro->especie }}"
+                data-cantidad-tablas="{{ $registro->cantidad_tablas }}"
+                data-alto="{{ $registro->alto }}"
+                data-ancho="{{ $registro->ancho }}"
+                data-espesor="{{ $registro->espesor }}"
+                data-total-metros-cubicos="{{ $registro->total_metros_cubicos }}"
+                data-total-pies-tablares="{{ $registro->total_pies_tablares }}"
+                >Editar</button>
                 <button class="btn btn-black">PDF</button>
             </td>
         </tr>
@@ -54,6 +66,7 @@
 </table>
 
 @include('components.modalEliminarRegistro')
+@include('components.modalEditarRegistro')
 
 @push('scripts')
     <script type="text/javascript">
@@ -66,6 +79,11 @@
 
             let actionCorrecto = window.location.protocol + "//" + window.location.host + "/registroEliminado/" + btn.dataset.registroId;
             jQuery('#frmEliminarRegistro').attr('action', actionCorrecto);
+        }
+
+        function mostrarModalEditarRegistro(btn) {
+            jQuery('#modalEditarRegistro').modal('show');
+            
         }
     </script>
 @endpush
