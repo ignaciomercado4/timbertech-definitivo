@@ -9,6 +9,12 @@ class InitialController extends Controller
 {
     public function mostrarRegistrosExistentes() {
         $registros = Registro::all();
+        //dd($registros);
+
+        if (!$registros) {
+            return view('vistaRegistrosVacios');
+        }
+
         return view('registrosExistentes', compact('registros'));
     }
 

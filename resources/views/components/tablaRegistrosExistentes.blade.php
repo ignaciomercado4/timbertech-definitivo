@@ -37,7 +37,7 @@
                 >
                 Eliminar
             </button>
-                <button class="btn btn-primary">Modificar</button>
+                <button class="btn btn-primary">Editar</button>
                 <button class="btn btn-black">PDF</button>
             </td>
         </tr>
