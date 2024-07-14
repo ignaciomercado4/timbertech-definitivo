@@ -4,10 +4,11 @@ Este repositorio contiene todos los archivos de la aplicación que estoy desarro
 <p>Tech stack: PHP, Laravel, Blade, HTML, CSS, Bootstrap, JavaScript, jQuery, SQLite.</p>
 
 <h2>Para devs</h2>
+
 - PHP 7.2.5
 - Composer 2.7.4
 - Node.js 10.5
-
+  
 Para correr el proyecto en local hay que seguir los siguientes pasos:
 - Clonar el repositorio en una carpeta vacía
 - En una terminal ir a la carpeta con el proyecto
