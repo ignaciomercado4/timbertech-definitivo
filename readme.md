@@ -27,7 +27,7 @@ This repository contains all the files of the application I am developing for my
 - PHP 7.2.5
 - Composer 2.7.4
 - Node.js 10.5
-- 
+  
 To run the project locally, follow these steps:
 
 - Clone the repository into an empty folder.
