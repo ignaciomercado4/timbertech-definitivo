@@ -9,11 +9,6 @@ class InitialController extends Controller
 {
     public function mostrarRegistrosExistentes() {
         $registros = Registro::all();
-        //dd($registros);
-
-        if (!$registros) {
-            return view('vistaRegistrosVacios');
-        }
 
         return view('registrosExistentes', compact('registros'));
     }
@@ -41,8 +36,12 @@ class InitialController extends Controller
         return redirect()->route('registrosExistentes');
     }
 
-    public function modificarRegistro($id, Request $request) {
-        // hacer logica de modificación acá
+    public function modificarRegistro($id) {
+        $registroAEditar = Registro::findOrFail($id);
+        
+        $registroAEditar->update(request()->all());
+
+        return redirect()->route('registrosExistentes');
     }
 }
 

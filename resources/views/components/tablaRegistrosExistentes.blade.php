@@ -92,6 +92,71 @@
             jQuery('#datosRegistroEditarAlto').val(btn.dataset.alto);
             jQuery('#datosRegistroEditarAncho').val(btn.dataset.ancho);
             jQuery('#datosRegistroEditarEspesor').val(btn.dataset.espesor);
+            jQuery('#inputTotalMetrosCubicos').val(btn.dataset.totalMetrosCubicos);
+            jQuery('#inputTotalPiesTablares').val(btn.dataset.totalPiesTablares);
+
+            let actionCorrecto = window.location.protocol + "//" + window.location.host + "/registroModificado/" + btn.dataset.registroId;
+            jQuery('#frmEditarRegistro').attr('action', actionCorrecto);
         }
+
+        function calcularVolumenMetrosCubicos() {
+            // referencias al DOM
+            let altoInput = document.querySelector('#datosRegistroEditarAlto');
+            let anchoInput = document.querySelector('#datosRegistroEditarAncho');
+            let espesorInput = document.querySelector('#datosRegistroEditarEspesor');
+            let cantidadTablasInput = document.querySelector('#datosRegistroEditarCantidadTablas');
+            let totalMetrosCubicosInput = document.querySelector('#inputTotalMetrosCubicos');
+
+            let alto = altoInput.value;
+            let ancho = anchoInput.value;
+            let espesor = espesorInput.value;
+            let cantidadTablas = cantidadTablasInput.value;
+
+            // convertir las medidas a metros
+            const altoMetros = alto * 0.3048; // 1 pie = 0.3048 metros
+            const anchoMetros = ancho * 0.3048; // 1 pie = 0.3048 metros
+            const espesorMetros = espesor * 0.0254; // 1 pulgada = 0.0254 metros
+
+            // calcular el volumen de una tabla en metros cúbicos
+            const volumenTablaMetrosCubicos = altoMetros * anchoMetros * espesorMetros;
+
+            // multiplicar por la cantidad de tablas
+            let volumenTotalMetrosCubicos = volumenTablaMetrosCubicos * cantidadTablas;
+            volumenTotalMetrosCubicos = volumenTotalMetrosCubicos.toFixed(4);
+
+            totalMetrosCubicosInput.value = volumenTotalMetrosCubicos;
+        }
+
+
+        function calcularVolumenPiesTablares() {
+            // referencias al DOM
+            let altoInput = document.querySelector('#datosRegistroEditarAlto');
+            let anchoInput = document.querySelector('#datosRegistroEditarAncho');
+            let espesorInput = document.querySelector('#datosRegistroEditarEspesor');
+            let cantidadTablasInput = document.querySelector('#datosRegistroEditarCantidadTablas');
+            let totalPiesTablaresInput = document.querySelector('#inputTotalPiesTablares');
+
+            let alto = altoInput.value;
+            let ancho = anchoInput.value;
+            let espesor = espesorInput.value / 12; // en un pie hay 12 pulgadas
+            let cantidadTablas = cantidadTablasInput.value;
+
+            // calcular el volumen de una tabla en pies tablares
+            const volumenTablaMetrosCubicos = (alto * ancho * espesor) * 423.7760007; // 1 m³ = 423.7760007 bf   
+
+            // multiplicar por la cantidad de tablas
+            let volumenTotalPiesTablares = volumenTablaMetrosCubicos * cantidadTablas;
+            volumenTotalPiesTablares = volumenTotalPiesTablares.toFixed(4);
+
+            totalPiesTablaresInput.value = volumenTotalPiesTablares;
+        }
+        
+        function submitEdicionRegistro (btn) {
+            calcularVolumenMetrosCubicos();
+            calcularVolumenPiesTablares();
+            let formEditarRegistro = document.querySelector('#formEdicionRegistro');
+            formEditarRegistro.submit();
+        }
+
     </script>
 @endpush

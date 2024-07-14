@@ -8,9 +8,9 @@
         <h3 id="headerRegistroId">
           {{-- Acá va el texto que especifica el registro a modificar --}}
         </h3><hr>
-        <form method="POST" action="" class="form-group">
+        <form method="POST" id="frmEditarRegistro" action="" class="form-group">
           @csrf
-          @method('post')
+          @method('PUT')
 
           <label for="operario">
               Nombre completo:
@@ -45,9 +45,21 @@
           <input type="number" id="datosRegistroEditarAlto" name="alto" id="alto" class="form-control w-100" placeholder="Alto en pies" min="0" required>
           <input type="number" id="datosRegistroEditarAncho" name="ancho" id="ancho" class="form-control w-100" placeholder="Ancho en pies" min="0" required>
           <input type="number" id="datosRegistroEditarEspesor" name="espesor" id="espesor" class="form-control w-100" placeholder="Espesor en pulgadas" min="0" required><br>
+
+          <label for="total_metros_cubicos" class="mt-2">
+              Total en metros cúbicos:
+          </label>
+          <input type="number" step="0.0001" name="total_metros_cubicos" id="inputTotalMetrosCubicos" class="form-control w-100 mt-2" placeholder="Total metros cúbicos" required><br>
+          <label for="total_pies_tablares">
+              Total en pies tablares:
+          </label>
+          <input type="number" step="0.0001" name="total_pies_tablares" id="inputTotalPiesTablares" class="form-control w-100" placeholder="Total pies tablares" required><br>
+          <hr>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary">Actualizar totales y guardar cambios</button>
+          <button class="btn btn-primary" onclick="submitEdicionRegistro(this);">
+            Actualizar totales y guardar cambios
+          </button>
           <button type="button" class="btn btn-secondary" onclick="jQuery('#modalEditarRegistro').modal('hide');">
             Cerrar
           </button>
