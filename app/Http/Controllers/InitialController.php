@@ -7,8 +7,16 @@ use App\Registro;
 
 class InitialController extends Controller
 {
-    public function mostrarRegistrosExistentes() {
-        $registros = Registro::all();
+    public function mostrarRegistrosExistentes(Request $request) {
+        $ordenarPor = $request->get('ordenarPor');
+        
+        if ($ordenarPor == 'masRecientesPrimero') {
+            $registros = Registro::orderBy('fecha', 'desc')->get();
+        } elseif ($ordenarPor == 'menosRecientesPrimero') {
+            $registros = Registro::orderBy('fecha', 'asc')->get();
+        } else {
+            $registros = Registro::all();
+        }
 
         return view('registrosExistentes', compact('registros'));
     }
