@@ -83,7 +83,15 @@
 
         function mostrarModalEditarRegistro(btn) {
             jQuery('#modalEditarRegistro').modal('show');
-            
+            jQuery('#headerRegistroId').text("Registro ID: " + btn.dataset.registroId);
+            jQuery('#datosRegistroEditarOperario').val(btn.dataset.operario);
+            jQuery('#datosRegistroEditarFecha').val(btn.dataset.fecha);
+            jQuery('#datosRegistroEditarTurno').val(btn.dataset.turno);
+            jQuery('#datosRegistroEditarEspecie').val(btn.dataset.especie);
+            jQuery('#datosRegistroEditarCantidadTablas').val(btn.dataset.cantidadTablas);
+            jQuery('#datosRegistroEditarAlto').val(btn.dataset.alto);
+            jQuery('#datosRegistroEditarAncho').val(btn.dataset.ancho);
+            jQuery('#datosRegistroEditarEspesor').val(btn.dataset.espesor);
         }
     </script>
 @endpush

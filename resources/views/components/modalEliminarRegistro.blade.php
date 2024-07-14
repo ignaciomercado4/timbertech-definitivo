@@ -15,13 +15,13 @@
             <input type="text" id="datosRegistroEliminarEspecie" class="form-control" readonly>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="jQuery('#modalEliminarRegistro').modal('hide');">
-            Cerrar
-          </button>
           <form method="POST" action="" id="frmEliminarRegistro">
             @csrf
             @method('delete')
-            <button type="submit" class="btn btn-primary" onclick="">Eliminar</button>
+            <button type="submit" class="btn btn-danger" onclick="">Eliminar</button>
+            <button type="button" class="btn btn-secondary" onclick="jQuery('#modalEliminarRegistro').modal('hide');">
+              Cerrar
+            </button>
           </form>
           </div>
       </div>
