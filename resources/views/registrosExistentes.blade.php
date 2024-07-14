@@ -5,16 +5,12 @@
 @section('content')
     <div class="row-12 text-center">
         <div class="col-12">
-            <h1 class="h1 josefin">
+            <h1 class="h1 josefin mt-2">
                 Registros creados:
             </h1>
-            <form method="GET" action="{{ route('registrosExistentes') }}">
-                <select name="ordenarPor" id="ordenarPor">
-                    <option value="masRecientesPrimero">Mas recientes primero</option>
-                    <option value="menosRecientesPrimero">Menos recientes primero</option>
-                </select>
-                <button class="btn btn-dark" type="submit">Aplicar filtros</button>
-            </form>
+            <hr>
+            @include('components.filtros')
+
         </div>
     </div>
     <div class="d-flex justify-content-center">
