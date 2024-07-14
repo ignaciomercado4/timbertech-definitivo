@@ -50,7 +50,7 @@
                 data-total-metros-cubicos="{{ $registro->total_metros_cubicos }}"
                 data-total-pies-tablares="{{ $registro->total_pies_tablares }}"
                 >Editar</button>
-                <button class="btn btn-black">PDF</button>
+                <button class="btn btn-info">PDF</button>
             </td>
         </tr>
         <style>
