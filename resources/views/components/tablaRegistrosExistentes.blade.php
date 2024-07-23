@@ -1,4 +1,4 @@
-<table class="table-bordered">
+<table class="table-bordered" id="elementoPDF">
     <tr class="text-center">
         <th>Nombre</th>
         <th>Fecha</th>
@@ -50,7 +50,6 @@
                 data-total-metros-cubicos="{{ $registro->total_metros_cubicos }}"
                 data-total-pies-tablares="{{ $registro->total_pies_tablares }}"
                 >Editar</button>
-                <button class="btn btn-info">PDF</button>
             </td>
         </tr>
         <style>

@@ -21,7 +21,7 @@
         Crear registro
     </button>
     <button type="button" class="btn btn-dark m-4 fs-2" onclick="window.location.href = '{{ url("registrosExistentes") }}'">
-        Cargar registro
+        Ver registros
     </button>
 </div>
 
