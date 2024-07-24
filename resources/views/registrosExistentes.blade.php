@@ -25,24 +25,37 @@
     <script src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
     
     <script>
-        // pasar tabla a pdf
-        document.getElementById('crearPDF').addEventListener('click', () => {
-            const element = document.getElementById('elementoPDF');
-            html2pdf(element);
-        });
+        function clonarTablaSinCampoAcciones() {
+            const originalTable = document.getElementById('elementoPDF');
+            const cloneTable = originalTable.cloneNode(true);
 
-        // pasar tabla a xlsx
-        function tablaAExcel(type){
-            let data = document.querySelector('#elementoPDF');
+            const rows = cloneTable.rows;
+            for (let row of rows) {
+                row.deleteCell(-1);
+            }
 
-            let file = XLSX.utils.table_to_book(data, {sheet: "sheet1"});
-
-            XLSX.write(file, { bookType: type, bookSST: true, type: 'base64' });
-
-            XLSX.writeFile(file, 'produccion.' + type);
+            const container = document.createElement('div');
+            container.appendChild(cloneTable);
+            
+            return container;
         }
 
-        document.getElementById('crearXLSX').addEventListener('click', () =>  {
+        // crea y descarga el PDF
+        document.getElementById('crearPDF').addEventListener('click', () => {
+            const container = clonarTablaSinCampoAcciones();
+            html2pdf().from(container).save();
+        });
+
+        
+        // crea y descarga el XLSX
+        function tablaAExcel(type) {
+            const container = clonarTablaSinCampoAcciones();
+            const table = container.querySelector('table');
+            const workbook = XLSX.utils.table_to_book(table, {sheet: "sheet1"});
+            XLSX.writeFile(workbook, 'produccion.' + type);
+        }
+
+        document.getElementById('crearXLSX').addEventListener('click', () => {
             tablaAExcel('xlsx');
         });
 

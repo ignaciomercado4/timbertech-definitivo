@@ -16,7 +16,7 @@
     @foreach($registros as $registro)
         <tr class="text-center">
             <td>{{ $registro->operario }}</td>
-            <td>{{ $registro->fecha }}</td>
+            <td>{{ date('d/m/Y', strtotime($registro->fecha)) }}</td>
             <td>{{ $registro->turno }}</td>
             <td>{{ $registro->especie }}</td>
             <td>{{ $registro->cantidad_tablas }}</td>
@@ -27,38 +27,39 @@
             <td>{{ $registro->total_pies_tablares }}</td>
             <td>{{ $registro->id }}</td>
             <td>
-            <button 
-                class="btn btn-danger" 
-                onclick="mostrarModalEliminarRegistro(this);"
-                data-registro-id="{{ $registro->id }}"
-                data-operario="{{ $registro->operario }}"
-                data-fecha="{{ $registro->fecha }}"
-                data-especie="{{ $registro->especie }}">
-                Eliminar
-            </button>
-                <button class="btn btn-primary"
-                onclick="mostrarModalEditarRegistro(this);"
-                data-registro-id="{{ $registro->id }}"
-                data-operario="{{ $registro->operario }}"
-                data-fecha="{{ $registro->fecha }}"
-                data-turno="{{ $registro->turno }}"
-                data-especie="{{ $registro->especie }}"
-                data-cantidad-tablas="{{ $registro->cantidad_tablas }}"
-                data-alto="{{ $registro->alto }}"
-                data-ancho="{{ $registro->ancho }}"
-                data-espesor="{{ $registro->espesor }}"
-                data-total-metros-cubicos="{{ $registro->total_metros_cubicos }}"
-                data-total-pies-tablares="{{ $registro->total_pies_tablares }}"
-                >Editar</button>
+                <button 
+                    class="btn btn-danger" 
+                    onclick="mostrarModalEliminarRegistro(this);"
+                    data-registro-id="{{ $registro->id }}"
+                    data-operario="{{ $registro->operario }}"
+                    data-fecha="{{ $registro->fecha }}"
+                    data-especie="{{ $registro->especie }}">
+                    Eliminar
+                </button>
+                    <button class="btn btn-primary"
+                    onclick="mostrarModalEditarRegistro(this);"
+                    data-registro-id="{{ $registro->id }}"
+                    data-operario="{{ $registro->operario }}"
+                    data-fecha="{{ $registro->fecha }}"
+                    data-turno="{{ $registro->turno }}"
+                    data-especie="{{ $registro->especie }}"
+                    data-cantidad-tablas="{{ $registro->cantidad_tablas }}"
+                    data-alto="{{ $registro->alto }}"
+                    data-ancho="{{ $registro->ancho }}"
+                    data-espesor="{{ $registro->espesor }}"
+                    data-total-metros-cubicos="{{ $registro->total_metros_cubicos }}"
+                    data-total-pies-tablares="{{ $registro->total_pies_tablares }}"
+                    >Editar
+                </button>
             </td>
         </tr>
         <style>
             th {
-                padding: 5px;
+                padding: 1px;
             }
 
             td {
-                padding: 5px;
+                padding: 2px;
             }
         </style>
     @endforeach
