@@ -10,8 +10,8 @@
             </h1>
             <hr>
             @include('components.filtros')
-            <button class="btn mb-3" style="background-color: #296928; color: white;" id="crearPDF">Descargar PDF</button>
-            <button class="btn mb-3" style="background-color: #7e1919; color: white;" id="crearXLSX">Descargar XLSX</button>
+            <button class="btn mb-3" style="background-color: #7e1919; color: white;" id="crearPDF">Descargar PDF</button>
+            <button class="btn mb-3"  style="background-color: #296928; color: white;" id="crearXLSX">Descargar XLSX</button>
         </div>
     </div>
     <div class="d-flex justify-content-center">

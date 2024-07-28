@@ -2,12 +2,11 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edite los datos de su registro:</h5>
+        <h5 class="modal-title" id="editarModalLabel">
+          {{-- Aca iría el ID del registo --}}
+        </h5>
       </div>
       <div class="modal-body">
-        <h3 id="headerRegistroId">
-          {{-- Acá va el texto que especifica el registro a modificar --}}
-        </h3><hr>
         <form method="POST" id="frmEditarRegistro" action="" class="form-group">
           @csrf
           @method('PUT')
