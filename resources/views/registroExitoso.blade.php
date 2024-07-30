@@ -1,6 +1,6 @@
 @extends('layouts.basicLayout')
 
-@section('title', 'Registro exitoso!')
+@section('title', 'Registro cargado')
 
 @section('content')
     <div class="d-flex justify-content-center">

@@ -16,6 +16,11 @@
             Timber<span class="fw-light">Tech</span>
         </p>
     </a>
+    @auth
+        <a href="{{ route('logout') }}" class="fs-6 text-light opacity-50">
+            Cerrar sesión
+        </a>
+    @endauth
 </header>
 <body>
     <div class="container-fluid">

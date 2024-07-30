@@ -51,5 +51,9 @@ class InitialController extends Controller
 
         return redirect()->route('registrosExistentes');
     }
+
+    public function mostrarFormRegistro () {
+        return view('registroUsuario');
+    }
 }
 

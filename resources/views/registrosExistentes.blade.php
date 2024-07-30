@@ -1,6 +1,6 @@
 @extends('layouts.basicLayout')
 
-@section('title', 'Iniciar registro')
+@section('title', 'Registros cargados')
 
 @section('content')
     <div class="row-12 text-center">

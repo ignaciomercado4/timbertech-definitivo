@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-<section style="height: 90;">
+<section style="height: 80vh;">
     <div class="josefin container py-5 h-100">
       <div class="josefin row d-flex justify-content-center align-items-center h-100">
         <div class="josefin col-12 col-md-8 col-lg-6 col-xl-5">
@@ -14,22 +14,28 @@
   
                 <h2 class="josefin mb-2 fs-1 josefin">Iniciar sesión</h2>
                 <p class="josefin mb-2 josefin opacity-50">¡Es bueno tenerte de vuelta!</p>
-                <p class="josefin text-white-50 mb-5 josefin">Ingresa tu usuario y contraseña</p>
-  
-                <div data-mdb-input-init class="josefin form-outline form-white mb-4">
-                  <input type="text" id="usuario" class="josefin form-control form-control-lg" placeholder="Usuario"/>
-                  <label class="josefin form-label" for="usuario">Usuario</label>
-                </div>
-  
-                <div data-mdb-input-init class="josefin form-outline form-white mb-4">
-                  <input type="password" id="contrasenia" class="josefin form-control form-control-lg" placeholder="Contraseña"/>
-                  <label class="josefin form-label" for="contrasenia">Contraseña</label>
-                </div>
-  
-                <p class="josefin small mb-5 pb-lg-2"><a class="josefin text-white-50" href="#!">¿Olvidaste tu contraseña?</a></p>
-  
-                <button data-mdb-button-init data-mdb-ripple-init class="josefin btn btn-outline-light btn-lg px-5 josefin" type="button" onclick="window.location.href = '{{ url("") }}'">Login</button>
-  
+                <p class="josefin text-white-50 mb-2 josefin">Ingresa tu usuario y contraseña</p>
+                
+                <p class="opacity-50">
+                  ¿No tenés cuenta?
+                  <a href="{{ url('/formRegistro') }}" class="fs-7 text-light opacity-50"> Registrate acá</a>
+                </p>
+                
+                <form method="POST" action="{{ route('inicia-sesion') }}">
+                  @csrf
+                  <div class="text-start">
+                      <label for="email" class="mt-3">Ingrese su correo:</label>
+                      <input type="email" id="email" name="email" placeholder="Correo" class="form-control">
+                      
+                      <label for="password" class="mt-3">Ingrese su contraseña:</label>
+                      <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control">
+                      
+                      <label for="remember">Mantener sesión iniciada</label>
+                      <input name="remember" type="checkbox" id="remember">
+                  </div>
+                  <button type="submit" class="btn btn-light mt-3 fs-5">Ingresar</button>
+              </form>
+
             </div>
           </div>
         </div>
