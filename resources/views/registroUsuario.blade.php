@@ -16,7 +16,7 @@
                 <p class="josefin mb-2 josefin opacity-50">¡Creemos tu usuario!</p>
                 <p class="josefin text-white-50 mb-2 josefin">Elige tu usuario y contraseña</p>
   
-                <form method="POST" action="{{ route('validar-registro') }}">
+                <form method="POST" action="{{ route('validar-registro') }}" id="formRegistrarUsuario">
                   @csrf
                   
                   <div class="text-start">
@@ -25,10 +25,10 @@
                     <label for="email" class="mt-3">Ingresa tu Email:</label>
                     <input type="email" name="email" placeholder="Email" class="form-control">
                     <label for="password" class="mt-3">Elige una contraseña:</label>
-                    <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                    <input type="password" id="userPassword" name="password" placeholder="Contraseña" class="form-control">
                   </div>
 
-                  <button type="submit" class="btn btn-light mt-3 fs-5">Crear usuario</button>
+                  <button type="button" class="btn btn-light mt-3 fs-5" onclick="validarDatosUsuario()">Crear usuario</button>
                   
                 </form>
 
@@ -38,4 +38,22 @@
       </div>
     </div>
   </section>
+
+  @push('scripts')
+      <script type="text/javascript">
+        function validarDatosUsuario() {
+          const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
+          let userPassword = document.querySelector('#userPassword').value;
+          if (!regex.test(userPassword)) {
+            alert('TA MAL TU CONTRASEÑA');
+          }
+          else {
+            alert('ok');
+            let formRegistrarUsuario = document.querySelector('#formRegistrarUsuario');
+            formRegistrarUsuario.submit();
+          }
+        }
+      </script>
+  @endpush
+
 @endsection
