@@ -6,7 +6,7 @@
 <div class="row text-center m-0 p-0">
     <div class="col-12">
         <h1 class="h1 m-3 josefin">
-            Hagamos tu registro más personalizado.
+            Completemos tu registo:
         </h1>
         <hr>
     </div>
@@ -50,7 +50,7 @@
             <input type="number" name="espesor" id="espesor" class="form-control w-25" placeholder="Espesor en pulgadas" min="0" required><br>
             <hr>
 
-            <button type="button" class="btn btn-outline-dark" action="" id="calculateButton" onclick="calcularVolumenMetrosCubicos(); calcularVolumenPiesTablares()">
+            <button type="button" class="btn btn-outline-dark" action="" id="calculateButton" onclick="calcularVolumenesTotales()">
                 Calcular totales
             </button><br>
             <label for="total_metros_cubicos" class="mt-2">
@@ -147,6 +147,11 @@
         volumenTotalPiesTablares = volumenTotalPiesTablares.toFixed(4);
 
         totalPiesTablaresInput.value = volumenTotalPiesTablares;
+    }
+
+    function calcularVolumenesTotales() {
+        calcularVolumenMetrosCubicos();
+        calcularVolumenPiesTablares();
     }
 
 </script>
