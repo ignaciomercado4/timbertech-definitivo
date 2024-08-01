@@ -10,14 +10,14 @@
             </h1>
         </div>
     </div>
-    <div class="row-12 text-center">
+    <div class="row-12 text-center" style="margin-top: 20vh">
         <div class="col-12">    
-            <button class="btn btn-dark m-3 fs-3" onclick="window.location.href = '{{ url("registrosExistentes") }}'">
+            <button class="btn btn-dark m-3 fs-5" onclick="window.location.href = '{{ url("registrosExistentes") }}'">
                 Ver registros
             </button>
         </div>
         <div class="col-12">            
-            <button class="btn btn-dark m-3 fs-3" onclick="window.location.href = '{{ url("completarRegistro") }}'">
+            <button class="btn btn-dark m-3 fs-5" onclick="window.location.href = '{{ url("completarRegistro") }}'">
                 Volver cargar un nuevo registro
             </button>
         </div>
