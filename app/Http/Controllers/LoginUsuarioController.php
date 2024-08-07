@@ -18,6 +18,8 @@ class LoginUsuarioController extends Controller
         $user->save();
     
         Auth::login($user);
+
+        InitialController::auditarAccionesUsuario("Se registró e inició sesión por primera vez.");
     
         return redirect(route('homepage'));
     }    

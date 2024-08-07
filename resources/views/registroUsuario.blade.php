@@ -39,16 +39,17 @@
     </div>
   </section>
 
+  @include('components.modalDatosIncorrectos')
+
   @push('scripts')
       <script type="text/javascript">
         function validarDatosUsuario() {
           const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
           let userPassword = document.querySelector('#userPassword').value;
           if (!regex.test(userPassword)) {
-            alert('TA MAL TU CONTRASEÑA');
+            jQuery('#modalDatosIncorrectos').modal('show');
           }
           else {
-            alert('ok');
             let formRegistrarUsuario = document.querySelector('#formRegistrarUsuario');
             formRegistrarUsuario.submit();
           }
